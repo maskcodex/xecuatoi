@@ -1,0 +1,330 @@
+/*
+Theme Name: Twenty Thirteen
+Theme URI: https://wordpress.org/themes/twentythirteen/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Version: 1.6
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, accessibility-ready
+Text Domain: twentythirteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Reset
+ * 2.0 - Repeatable Patterns
+ * 3.0 - Basic Structure
+ * 4.0 - Header
+ *   4.1 - Site Header
+ *   4.2 - Navigation
+ * 5.0 - Content
+ *   5.1 - Entry Header
+ *   5.2 - Entry Meta
+ *   5.3 - Entry Content
+ *   5.4 - Galleries
+ *   5.5 - Post Formats
+ *   5.6 - Attachments
+ *   5.7 - Post/Paging Navigation
+ *   5.8 - Author Bio
+ *   5.9 - Archives
+ *   5.10 - Search Results/No posts
+ *   5.11 - 404
+ *   5.12 - Comments
+ *   5.13 - Multisite
+ * 6.0 - Sidebar
+ *   6.1 - Widgets
+ * 7.0 - Footer
+ * 8.0 - Media Queries
+ * 9.0 - Print
+ * ----------------------------------------------------------------------------
+ */
+
+
+/**
+ * 1.0 Reset
+ *
+ * Modified from Normalize.css to provide cross-browser consistency and a smart
+ * default styling of HTML elements.
+ *
+ * @see http://git.io/normalize
+ * ----------------------------------------------------------------------------
+ */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
+
+html {
+	margin: 0 !important;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family:Lato;
+	font-weight:400;
+	font-style:normal;
+	color: #242424;
+}
+
+.clr {
+	clear: both;
+}
+
+#header {
+	width: 1000px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+#header #top-head {
+	width: 100%;
+	height: 90px;
+}
+
+#logo-header {
+	height: 100%;
+	float: left;
+}
+
+#logo-header img {
+	height: 80%;
+}
+
+#info-header p {
+	padding: 0;
+	margin: 0;
+	width: 200px;
+	float: right;
+	font-size: 0.8em;
+}
+
+#header-menu {
+	height: 40px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: white;
+	border-bottom: solid #0066cc 1px;
+}
+
+#header-menu ul {
+	width: 100%;
+	height: 40px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#header-menu ul li {
+	float: left;
+	height: 40px;
+	line-height: 20px;
+	cursor: pointer;
+	padding: 10px;
+	margin-right: 2px;
+}
+
+#header-menu ul li:hover {
+	background: #0066cc;
+	color: white;
+}
+
+#header-menu ul li.active {
+	background: #0066cc;
+	color: white;
+}
+
+#wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	height: auto;
+}
+
+#top-content {
+	width: 100%;
+}
+
+#pick-form {
+	width: 40%;
+	height: 310px;
+	float: left;
+}
+
+#slider {
+	width: 60%;
+	float: left;
+	height: 300px;
+}
+
+#slider img {
+	
+	width: 96%;
+	margin-left: 2%;
+	height: 310px;
+}
+
+#call-info {
+	width: 40%;
+	float: left;
+	padding: 10px;
+	border: solid 1px #ccc;
+	border-radius: 8px;
+}
+
+#call-info p {
+	text-align: center;
+}
+
+#content {
+	width: 100%;
+}
+
+.content-box {
+	width: 100%;
+	padding: 15px;
+	margin-top: 15px;
+	margin-bottom: 25px;
+	border-bottom: solid 1px #ccc;
+}
+
+table#car-list {
+	width: 60%;
+	float; left
+}
+
+table#car-list td {
+	text-align: center;
+}
+
+table#car-list td h4{
+	margin:0;
+	padding:0 0 5px 0;
+}
+
+table#car-list td img {
+	width: 40%;
+	border-radius: 20%;
+	border: solid 3px #ccc;
+}
+
+#footer {
+	width: 100%;
+	height: 100px;
+	background: #666;
+}
+
+#footer-content {
+	width: 1000px;
+	margin: 0 auto;
+	height: 100%;
+    padding: 15px;
+    color: #e4e4e4;
+    font-size: 0.8em;
+}
+
+#footer-content p {
+	text-align: center;
+}
+
+table#info-list td {
+	text-align: justify;
+}
+
+table#info-list td h3 {
+	text-align: center;
+	color: #666;
+}
+
+table#info-list td p {
+	color: #999;
+}
+
+.red-style-large {
+	color: red;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.red-style-medium {
+	color: red;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#menu-form {
+	list-style: none;
+	width: 100%;
+	background: #ccc;
+	height: 50px;
+	padding: 0;
+	margin:0;
+}
+
+#menu-form li {
+	float: left;
+	height:50px;
+	line-height: 30px;
+	cursor: pointer;
+	padding:10px;
+}
+
+#menu-form li.active {
+	background: #ff9933;
+	color: white;
+}
+
+#pick-form {
+	border: solid 1px #ccc;
+	color: #666;
+}
+
+#form-content {
+	padding: 8px;
+}
+
+#form-content input {
+	height: 30px;
+	margin: 5px;
+	border-color: #ccc;
+	color: #999;
+	border: solid 1px #ccc;
+}
+
+select {
+	height: 30px;
+	margin: 5px;
+	border-color: #ccc;
+	color: #999;
+	border: solid 1px #ccc;
+}
+
+#form-content input[type='datetime'] {
+	width: 70px;
+}
+
+#form-content input[type='text'] {
+	width: 150px;
+}
+
+#form-content input[type='button'] {
+	border: transparent;
+	background: #0066cc;
+	border-radius: 2px;
+	margin:5px;
+	cursor: pointer;
+	color: white;
+}
+
+#form-content input[type='button']:hover {
+	box-shadow: 2px 2px 2px #ccc;
+}

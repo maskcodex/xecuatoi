@@ -129,4 +129,32 @@
 			isRTL: body.is( '.rtl' )
 		} );
 	}
+
+	Date.prototype.toDateInputValue = (function() {
+	    var local = new Date(this);
+	    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+	    return local.toJSON().slice(0,10);
+	});
+	/* Custom function*/
+	$(document).ready( function() {
+	    $('#date-start').val(new Date().toDateInputValue());
+
+	    check_direct_way();
+	});
+
+	function check_direct_way() {
+		$('#return-way').change(function() {
+	        if($(this).is(":checked")) {
+	         	
+	         	$('#goal-location').prop('disabled', 'disabled');
+	        }       
+	    });
+
+	    $('#one-way').change(function() {
+	        if($(this).is(":checked")) {
+	         	$('#goal-location').prop('disabled', false);
+	        }       
+	    });
+	}
+
 } )( jQuery );

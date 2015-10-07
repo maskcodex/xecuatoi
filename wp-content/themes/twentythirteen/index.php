@@ -16,49 +16,7 @@
 
 get_header(); ?>
 <div id='top-content'>
-            <div id='pick-form'>
-            	<form>
-	                <div id='head-form'>
-	                    <ul id='menu-form'>
-	                        <li class='active'>Đặt Xe</li>
-	                        <li>Xem/thay đổi/Hủy đặt xe</li>
-	                    </ul>
-	                </div>
-	                <div id='form-content'>
-	                	<table cellpadding='0' cellspacing='0'>
-	                		<tr>
-	                			<td><input type="radio" name="direction" value="one_way" checked><span>Một Chiều</span></td>
-	                			<td><input type="radio" name="direction" value="two_way"><span>Hai Chiều</span></td>
-	                		</tr>
-	                		<tr>
-	                			<td>Đi từ:<input type='text' value='HCM'></td>
-	                			<td>Ngày:<input type='datetime'></td>
-	                		</tr>
-	                		<tr>
-	                			<td>Đến:<input type='text' value='Vũng Tàu'></td>
-	                			<td>Ngày:<input type='datetime'></td>
-	                		</tr>
-	                		<tr>
-	                			<td>Loại xe:</td>
-	                			<td><select>
-	  							<option value="audi">Audi</option>
-	  							<option value="bmw">BMW</option>
-  							</select></td>
-	                		</tr>
-	                		<tr>
-	                			<td>Quãng đường dự kiến:</td>
-	                			<td><input type='text' value=''></td>
-	                		</tr>
-	                		<tr>
-	                			<td><input type='button' value='Thành viên đặt xe'></td>
-	                			<td><input type='button' value='Khách đặt xe'> </td>
-	                		</tr>
-	                	</table>
-  					  		
-  					  	
-	                </div>
-            	</fomr>
-            </div>
+            <?php get_template_part( 'car', 'searchform' ); ?>
             <div id='slider'>
                 <img src="<?php echo get_template_directory_uri(); ?>/images/2.jpg">
             </div>

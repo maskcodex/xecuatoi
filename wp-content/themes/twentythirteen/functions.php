@@ -550,3 +550,11 @@ function twentythirteen_customize_preview_js() {
 	wp_enqueue_script( 'twentythirteen-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20141120', true );
 }
 add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
+
+function wpse_load_custom_search_template(){
+    if( isset($_REQUEST['search']) == 'car' ) {
+        require('car-search-result.php');
+        die();
+    }
+}
+add_action('init','wpse_load_custom_search_template');

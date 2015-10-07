@@ -17,27 +17,29 @@
 			<div class='car-fearured-image'><?php the_post_thumbnail(); ?></div>
 			<div class='list-thumb-image'></div>
 		</div>
-		<div class='right-car-info'>
-			<h2><?php the_title(); ?></h2>
-			<table>
-				<tr>
-					<td>Biển số: <span class='bold'><?php echo $bien_so; ?></span></td>
-					<td>Lái xe: <span class='bold'><?php echo $lai_xe; ?></span></td>
-				</tr>
-				<tr>
-					<td>Số KM tối đa: <span class='bold'><?php echo $km; ?></span>Km</td>
-					<td>Số giờ tối đa: <span class='bold'><?php echo $gio; ?> Giờ</td>
-				</tr>
-				<tr>
-					<td>Giá chuyến đi: <span class='price'><?php echo number_format($gia); ?></span> VNĐ</td>
-					<td>VAT: <span class='bold'><?php echo $vat; ?></span> %</td>
-				</tr>
-				<tr>
-					<td>Phụ Thu: <span class='bold'><?php echo $phu_thu; ?></span> VNĐ</td>
-					<td><input type='button' value='Đặt Xe' class='book-car-button'></td>
-				</tr>
-			</table>
-		</div>
+		<form>
+			<div class='right-car-info'>
+				<h2><?php the_title(); ?></h2>
+				<table>
+					<tr>
+						<td>Biển số: <span class='bold'><?php echo $bien_so; ?></span></td>
+						<td>Lái xe: <span class='bold'><?php echo $lai_xe; ?></span></td>
+					</tr>
+					<tr>
+						<td>Số KM tối đa: <span class='bold'><?php echo $km; ?></span>Km</td>
+						<td>Số giờ tối đa: <span class='bold'><?php echo $gio; ?> Giờ</td>
+					</tr>
+					<tr>
+						<td>Giá chuyến đi: <span class='price'><?php echo number_format($gia); ?></span> VNĐ</td>
+						<td>VAT: <span class='bold'><?php echo $vat; ?></span> %</td>
+					</tr>
+					<tr>
+						<td>Phụ Thu: <span class='bold'><?php echo $phu_thu; ?></span> VNĐ</td>
+						<td><a href='<?php echo esc_url(get_permalink(30))."&car_id=".get_the_ID(); ?>'><input type="button"  value='Đặt Xe' class='book-car-button'></a></td>
+					</tr>
+				</table>
+			</div>
+		</form>
 		<div class='clr'></div>
 	</div>
 </article><!-- #post -->
